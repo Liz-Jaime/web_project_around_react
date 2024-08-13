@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/%7Baround-react_es%7D/static/css/main.9a455ef1.css",
+    "main.js": "/%7Baround-react_es%7D/static/js/main.f49bdea8.js",
+    "static/js/453.8d428687.chunk.js": "/%7Baround-react_es%7D/static/js/453.8d428687.chunk.js",
+    "static/media/Inter-SemiBold.woff2": "/%7Baround-react_es%7D/static/media/Inter-SemiBold.3be6b9e3b22c24eaada7.woff2",
+    "static/media/Inter-Black.woff2": "/%7Baround-react_es%7D/static/media/Inter-Black.9ed71fbc8206e8069042.woff2",
+    "static/media/Inter-Regular.woff2": "/%7Baround-react_es%7D/static/media/Inter-Regular.76224c7fa303861462e7.woff2",
+    "static/media/Around_Vector_Header.svg": "/%7Baround-react_es%7D/static/media/Around_Vector_Header.c75819857ff1599f0c50e9fc06373cd9.svg",
+    "static/media/Vector_corazon.svg": "/%7Baround-react_es%7D/static/media/Vector_corazon.df0c965524717a3fd8e9.svg",
+    "index.html": "/%7Baround-react_es%7D/index.html",
+    "static/media/vector_trash.svg": "/%7Baround-react_es%7D/static/media/vector_trash.ba43124316072f7a8629.svg",
+    "main.9a455ef1.css.map": "/%7Baround-react_es%7D/static/css/main.9a455ef1.css.map",
+    "main.f49bdea8.js.map": "/%7Baround-react_es%7D/static/js/main.f49bdea8.js.map",
+    "453.8d428687.chunk.js.map": "/%7Baround-react_es%7D/static/js/453.8d428687.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a455ef1.css",
+    "static/js/main.f49bdea8.js"
+  ]
+}
