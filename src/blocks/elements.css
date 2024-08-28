@@ -85,6 +85,10 @@
   cursor: pointer;
 }
 
+.element__trash-button_hidden {
+  visibility: hidden;
+}
+
 .element__trash-button:hover {
   opacity: 60%;
 }

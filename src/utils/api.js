@@ -63,8 +63,8 @@ class Api {
       headers: this.headers,
       "Content-Type": "application/json",
       body: JSON.stringify({
-        name: data.title,
-        link: data.image,
+        name: data.name,
+        link: data.link,
       }),
     })
       .then((res) => {
@@ -92,6 +92,14 @@ class Api {
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    if (isLiked) {
+      return this.removeLike(cardId);
+    } else {
+      return this.addLike(cardId);
+    }
   }
 
   removeLike(cardId) {
@@ -132,7 +140,7 @@ class Api {
       headers: this.headers,
       "Content-Type": "application/json",
       body: JSON.stringify({
-        avatar: data.avatar,
+        avatar: data,
       }),
     })
       .then((res) => {

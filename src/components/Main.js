@@ -1,41 +1,20 @@
 import editButton from "../images/Edit_button_Vector.png";
 import avatarButton from "../images/icono_edicion.png";
 import addButton from "../images/Vector_+.png";
-import { useState, useEffect } from "react";
-import api from "../utils/api";
+import { useState, useEffect, useContext } from "react";
 import Card from "./Card";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 export default function Main(props) {
-  const [userName, setUserName] = useState("");
-  const [userDescription, setUserDescription] = useState("");
-  const [userAvatar, setUserAvatar] = useState("");
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    async function getUserInfo() {
-      const response = await api.getUserInfo();
-      setUserName(response.name);
-      setUserDescription(response.about);
-      setUserAvatar(response.avatar);
-    }
-    getUserInfo();
-  }, []);
-  useEffect(() => {
-    async function getCards() {
-      const response = await api.getInitialCards();
-      setCards(response);
-    }
-    getCards();
-  }, []);
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <main className="main">
       <section className="profile">
         <img
           className="profile__img"
-          // src={profileAvatar}
           alt="profile photo"
-          style={{ backgroundImage: `url(${userAvatar})` }}
+          src={currentUser.avatar}
         />
         <button className="profile__avatar-button">
           <img
@@ -47,7 +26,7 @@ export default function Main(props) {
         </button>
         <div className="profile__container">
           <div className="profile__name-button">
-            <h1 className="profile__name">{userName}</h1>
+            <h1 className="profile__name">{currentUser.name}</h1>
             <button className="profile__edit-button">
               <img
                 src={editButton}
@@ -57,7 +36,7 @@ export default function Main(props) {
               />
             </button>
           </div>
-          <p className="profile__about">{userDescription}</p>
+          <p className="profile__about">{currentUser.about}</p>
         </div>
         <button className="profile__add-button">
           <img
@@ -70,7 +49,7 @@ export default function Main(props) {
       </section>
 
       <section className="elements">
-        {cards.map((card) => (
+        {props.cards.map((card) => (
           <Card
             onCardClick={props.onCardClick}
             card={card}
@@ -78,6 +57,8 @@ export default function Main(props) {
             name={card.name}
             likes={card.likes}
             link={card.link}
+            onCardLike={props.onCardLike}
+            onCardDelete={props.onCardDelete}
           />
         ))}
       </section>
